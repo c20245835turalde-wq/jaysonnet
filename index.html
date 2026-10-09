@@ -10,75 +10,187 @@
 
     <style type="text/tailwindcss">
         @custom-variant dark (&:where(.dark, .dark *));
+
+        @layer components {
+           
+            .btn-primary {
+                @apply inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 font-bold text-sm tracking-wide transition-all shadow-md active:scale-95 cursor-pointer;
+            }
+
+           
+            .btn-secondary {
+                @apply inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-bold text-sm tracking-wide hover:bg-yellow-300 transition-all shadow-md active:scale-95 cursor-pointer;
+            }
+
+           
+            .btn-accent {
+                @apply inline-flex items-center justify-center px-6 py-2.5 rounded-full border-2 border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black font-bold text-sm tracking-wide transition-all active:scale-95 cursor-pointer;
+            }
+
+            
+            .card-panel {
+                @apply bg-yellow-400 text-black border-2 border-yellow-500/30 dark:bg-zinc-900 dark:text-white dark:border-yellow-400/50 rounded-2xl p-6 shadow-2xl transition-all duration-300;
+            }
+
+            
+            .form-input {
+                @apply w-full bg-black/10 dark:bg-black/60 border border-black/20 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm text-black dark:text-white placeholder-black/60 dark:placeholder-zinc-400 font-semibold focus:outline-none focus:bg-white dark:focus:bg-black transition;
+            }
+
+           
+            .pill-badge {
+                @apply inline-flex items-center gap-2 bg-black text-white dark:bg-white dark:text-black rounded-full px-5 py-2 font-bold text-sm shadow-md transition-colors duration-300;
+            }
+        }
     </style>
 </head>
 
-<body class="text-center bg-white text-black dark:bg-gray-900 dark:text-white">
 
-    <h1 class="text-4xl font-bold underline text-red-700 mt-8">
-        turalde jayson
-    </h1>
+<body class="bg-zinc-100 text-zinc-900 dark:bg-black dark:text-white min-h-screen flex items-center justify-center p-3 sm:p-8 font-sans antialiased transition-colors duration-300">
 
-    <button id="Toggle" class="mt-5 bg-black text-white px-6 py-3 rounded-lg dark:bg-white dark:text-black">
-        Toggle
-    </button>
+    <div class="flex gap-4 w-full max-w-6xl items-center">
 
-    <nav class="flex justify-between items-center mx-8 mt-8">
-        <span class="font-bold">@turalde_jayson</span>
+      
+        <aside class="hidden lg:flex flex-col gap-6 bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-800 rounded-2xl p-4 shadow-2xl items-center text-zinc-600 dark:text-zinc-400 transition-colors duration-300">
+            <a href="#hero" class="p-2.5 hover:bg-zinc-200 dark:hover:bg-white/10 rounded-xl hover:text-black dark:hover:text-white transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            </a>
+            <a href="#projects" class="p-2.5 hover:bg-zinc-200 dark:hover:bg-white/10 rounded-xl hover:text-black dark:hover:text-white transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+            </a>
+            <a href="#services" class="p-2.5 hover:bg-zinc-200 dark:hover:bg-white/10 rounded-xl hover:text-black dark:hover:text-white transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            </a>
+            <a href="#contact" class="p-2.5 hover:bg-zinc-200 dark:hover:bg-white/10 rounded-xl hover:text-black dark:hover:text-white transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            </a>
+        </aside>
 
-        <ul class="flex gap-5 list-none">
-            <li><a href="#projects" class="hover:text-pink-500">Projects</a></li>
-            <li><a href="#services" class="hover:text-pink-500">Services</a></li>
-            <li><a href="#contact" class="hover:text-pink-500">Contact</a></li>
-        </ul>
-    </nav>
+       
+        <div class="w-full bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-800 rounded-[32px] p-6 sm:p-8 shadow-2xl space-y-8 transition-colors duration-300">
 
-    <!-- Content -->
-    <main class="flex flex-wrap gap-5 m-8">
+            
+            <header class="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-200 dark:border-zinc-800 pb-5">
+               
+                
+                <div class="flex items-center gap-2 bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded-full px-4 py-2 text-xs text-zinc-600 dark:text-zinc-400 w-full sm:w-64 transition-colors">
+                    <svg class="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <span>Search systems & works...</span>
+                </div>
 
-        <section id="projects" class="flex-1 min-w-[250px] p-5 border bg-orange-500 dark:bg-gray-800">
-            <h2 class="text-2xl font-bold text-pink-500 mb-4">My Projects</h2>
-            <p>Personal portfolio, payroll system, company website,
-                startup website, and compliance monitoring system.</p>
-        </section>
+               
+                <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-zinc-600 dark:text-zinc-400">
+                    <a href="#projects" class="hover:text-yellow-500 transition-colors">Projects</a>
+                    <a href="#services" class="hover:text-yellow-500 transition-colors">Services</a>
+                    <a href="#contact" class="hover:text-yellow-500 transition-colors">Contact</a>
+                </nav>
 
-        <section id="services" class="flex-1 min-w-[250px] p-5 border bg-red-500 dark:bg-gray-800">
-            <h2 class="text-2xl font-bold text-pink-500 mb-4">My Services</h2>
-            <p>Website Creation, System Creation, AI Automation,
-                Database Management, Project Management, Systems Analyst.</p>
-        </section>
+               
+                <div class="flex items-center gap-3">
+                    <div class="pill-badge !px-3 !py-1.5 !text-xs">
+                        <span class="w-2 h-2 rounded-full bg-yellow-400 inline-block animate-pulse"></span>
+                        <span>@turalde_jayson</span>
+                    </div>
 
-        <section id="contact"
-            class="flex-1 min-w-[250px] p-5 border bg-white text-black dark:bg-gray-800 dark:text-white">
-            <h2 class="text-2xl font-bold text-pink-500 mb-4">
-                Let's build together!
-            </h2>
+                    <button id="Toggle" class="btn-accent !px-4 !py-1.5 !text-xs">
+                        Toggle Mode
+                    </button>
+                </div>
+            </header>
 
-            <form class="flex flex-col gap-3">
-                <label for="name">Name</label>
-                <input id="name" type="text" placeholder="Your name" required
-                    class="border rounded p-3 bg-white text-black">
+            
+            <section id="hero" class="relative overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl !p-8 sm:!p-10 transition-colors duration-300">
+                <div class="relative z-10 space-y-4 max-w-xl">
+                    <span class="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-black dark:text-yellow-400 bg-yellow-400 px-3 py-1 rounded-full shadow-sm">
+                        ✶ Featured Showcase
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-tight">
+                        turalde jayson
+                    </h1>
+                    <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base leading-relaxed">
+                        Full-Stack Developer & Systems Architect building high-performance web applications, modern UI dashboards, and automated digital solutions.
+                    </p>
 
-                <label for="email">Email</label>
-                <input id="email" type="email" placeholder="Your email" required
-                    class="border rounded p-3 bg-white text-black">
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <a href="#projects" class="btn-primary">View Projects</a>
+                        <a href="#contact" class="btn-secondary">Let's Talk</a>
+                    </div>
+                </div>
+            </section>
 
-                <label for="message">Message</label>
-                <textarea id="message" rows="4" placeholder="Your message" required
-                    class="border rounded p-3 bg-white text-black"></textarea>
+           
+            <main class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                <button type="submit"
-                    class="bg-black text-white p-3 rounded-lg hover:bg-pink-400 dark:bg-white dark:text-black">
-                    Send Message
-                </button>
-            </form>
-        </section>
+               
+                <section id="projects" class="card-panel flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <span class="text-xs font-black uppercase tracking-widest text-black/60 dark:text-yellow-400">01 / Works</span>
+                        <h2 class="text-2xl font-black tracking-tight">My Projects</h2>
+                        <p class="text-sm font-medium text-black/80 dark:text-zinc-300 leading-relaxed">
+                            Web applications, payroll management software, enterprise dashboards, and custom client platforms.
+                        </p>
+                    </div>
+                    <div>
+                        <button class="btn-primary w-full">View Projects</button>
+                    </div>
+                </section>
 
-    </main>
+                
+                <section id="services" class="card-panel flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <span class="text-xs font-black uppercase tracking-widest text-black/60 dark:text-yellow-400">02 / Capabilities</span>
+                        <h2 class="text-2xl font-black tracking-tight">My Services</h2>
+                        <p class="text-sm font-medium text-black/80 dark:text-zinc-300 leading-relaxed">
+                            Full-Stack Development, API Engineering, System Analysis, UI/UX Design, and Database Optimization.
+                        </p>
+                    </div>
+                    <div>
+                        <button class="btn-primary w-full">Explore Services</button>
+                    </div>
+                </section>
 
+               
+                <section id="contact" class="card-panel space-y-4">
+                    <div class="space-y-1">
+                        <span class="text-xs font-black uppercase tracking-widest text-black/60 dark:text-yellow-400">03 / Connect</span>
+                        <h2 class="text-2xl font-black tracking-tight">Let's build together!</h2>
+                    </div>
+
+                    <form class="space-y-3 text-left">
+                        <div>
+                            <input id="name" type="text" placeholder="Name" required class="form-input">
+                        </div>
+
+                        <div>
+                            <input id="email" type="email" placeholder="Email" required class="form-input">
+                        </div>
+
+                        <div>
+                            <textarea id="message" rows="2" placeholder="Message" required class="form-input"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-full">
+                            Send Message
+                        </button>
+                    </form>
+                </section>
+
+            </main>
+
+            
+            <footer class="pt-4 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-zinc-500">
+                <p>© turalde jayson (@turalde_jayson). All rights reserved.</p>
+                <p class="font-bold text-yellow-500 dark:text-yellow-400">60-30-10 Dynamic Color Rule Active</p>
+            </footer>
+
+        </div>
+    </div>
+
+    
     <script>
         const toggleButton = document.getElementById("Toggle");
-        const html = document.querySelector("html");
+        const html = document.documentElement;
+
         toggleButton.addEventListener("click", () => {
             html.classList.toggle("dark");
         });
@@ -87,3 +199,4 @@
 </body>
 
 </html>
+
